@@ -9,6 +9,53 @@ import jdbc.JdbcUtil;
 import member.model.Member;
 
 public class MemberDao {
+	public void delete(Connection conn, String id) {
+		// 삭제 쿼리 실행
+		
+		Member member = null;
+		
+		String sql = "DELETE FROM member "
+				+ "WHERE memberid=?";
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				member = new Member();
+				member.setId(rs.getString(1));
+				member.setName(rs.getString(2));
+				member.setPassword(rs.getString(3));
+				member.setRegDate(rs.getTimestamp(4));
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JdbcUtil.close(rs, pstmt);
+		}
+	}
+	
+	public void update(Connection conn, Member member) 
+			throws SQLException {
+		
+		String sql = "UPDATE member "
+				+ "SET name=?, password=? "
+				+ "WHERE memberid=? ";
+		
+		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, member.getName());
+			pstmt.setString(2, member.getPassword());
+			pstmt.setString(3, member.getId());
+			
+			pstmt.executeUpdate();
+		}
+	}
 
 	public Member selectById(Connection con, String id) 
 			throws SQLException {
@@ -69,6 +116,8 @@ public class MemberDao {
 		}
 		
 	}
+	
+
 }
 
 
