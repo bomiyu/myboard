@@ -13,21 +13,20 @@
 </head>
 <body>
 <div class="container">
-  <h1>암호 변경</h1>
-  <form action="changePwd.do" method="post">
-    <p>
-      현재 암호 : <br />
-      <input type="password" name="curPwd" />
-      <c:if test="${errors.curPwd }" >현재 암호를 입력하세요. </c:if>
-      <c:if test="${errors.badCurPwd }">현재 암화 일치하지 않습니다 </c:if>
-    </p>
-    <p>
-      새 암호 : <br />
-      <input type="password" name="newPwd" />
-      <c:if test="${errors.newPwd }">새 암호를 입력하세요</c:if>
-    </p>
-    <input type="submit" value="암호 변경" />
-  </form>
+<h1>게시글 쓰기</h1>
+<form action="write.do" method="post">
+  <p>
+    제목 : <br />
+    <input type="text" name="title" value="${param.title }" />
+    <c:if test="${errors.title }">제목을 입력하세요.</c:if>
+  </p>
+  
+  <p>
+    내용 : <br />
+    <textarea name="content" id="" cols="30" rows="5">${param.content }</textarea>
+  </p>
+  <input type="submit" value="새 글 등록" />
+</form>
 </div>
 </body>
 </html>

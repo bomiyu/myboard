@@ -13,21 +13,12 @@
 </head>
 <body>
 <div class="container">
-  <h1>암호 변경</h1>
-  <form action="changePwd.do" method="post">
-    <p>
-      현재 암호 : <br />
-      <input type="password" name="curPwd" />
-      <c:if test="${errors.curPwd }" >현재 암호를 입력하세요. </c:if>
-      <c:if test="${errors.badCurPwd }">현재 암화 일치하지 않습니다 </c:if>
-    </p>
-    <p>
-      새 암호 : <br />
-      <input type="password" name="newPwd" />
-      <c:if test="${errors.newPwd }">새 암호를 입력하세요</c:if>
-    </p>
-    <input type="submit" value="암호 변경" />
-  </form>
+  <h1>게시글을 등록했습니다.</h1>
+  <a href="${root }/article/list.do">[게시글목록보기]</a>
+  <a href="${root }/article/read.do?no=${newArticleNo}">[게시글내용보기]</a>
 </div>
 </body>
 </html>
+
+
+
