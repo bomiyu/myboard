@@ -15,9 +15,7 @@ import mvc.command.CommandHandler;
 public class BoardDeleteHandler implements CommandHandler  {
 	private static final String FORM_VIEW = "listArticle";
 	private deleteArticleService deleteService = new deleteArticleService();
-	@Override 
-	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		if (req.getMethod().equalsIgnoreCase("get")) {
+
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		if (req.getMethod().equalsIgnoreCase("get")) {
