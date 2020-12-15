@@ -10,7 +10,6 @@ import java.util.Date;
 import java.util.List;
 
 import article.model.Article;
-import article.model.Delete;
 import article.model.Writer;
 import jdbc.JdbcUtil;
 
@@ -209,18 +208,15 @@ public class ArticleDao {
 	}
 
 
-	public int delete(Connection conn, int no) throws SQLException {
-		String sql = "DELETE FROM article WHERE article_no = ?";
+	public void delete(Connection con, int no) throws SQLException {
+		String sql = "DELETE article WHERE article_no=?";
 		
-		try (PreparedStatement pstmt = conn.prepareStatement(sql)){
+		try (PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setInt(1, no);
 			
-			return pstmt.executeUpdate();
+			pstmt.executeUpdate();
 		}
 	}
-
-
-
 }
 
 

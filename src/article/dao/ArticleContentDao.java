@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import article.model.ArticleContent;
-import article.model.Delete;
 import jdbc.JdbcUtil;
 
 public class ArticleContentDao {
@@ -69,13 +68,13 @@ public class ArticleContentDao {
 		}
 	}
 
-	public int delete(Connection conn, int no) throws SQLException {
-		String sql = "DELETE FROM article_content WHERE article_no = ?";
+	public void delete(Connection con, int no) throws SQLException {
+		String sql = "DELETE article_content WHERE article_no=?";
 		
-		try (PreparedStatement pstmt = conn.prepareStatement(sql)){
+		try (PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setInt(1, no);
 			
-			return pstmt.executeUpdate();
+			pstmt.executeUpdate();
 		}
 	}
 }
