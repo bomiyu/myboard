@@ -15,7 +15,17 @@ import mvc.command.CommandHandler;
 public class BoardDeleteHandler implements CommandHandler  {
 	private static final String FORM_VIEW = "listArticle";
 	private deleteArticleService deleteService = new deleteArticleService();
-
+	@Override
+	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		if (req.getMethod().equalsIgnoreCase("get")) {
+			return processForm(req, res);
+		} else if (req.getMethod().equalsIgnoreCase("post")) {
+			return processSubmit(req, res);
+		} else {
+			res.sendError(HttpServletResponse.SC_METHOD_NOT_ALLOWED);
+			return null;
+		}
+	}
 	@Override
 	public String process(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		if (req.getMethod().equalsIgnoreCase("get")) {
