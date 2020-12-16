@@ -16,20 +16,8 @@
   src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
 <style>
-.num-col {
-  width: 10%;
-}
-
-.title-col {
-  width: 60%;
-}
-
-.writer-col {
-  width: 20%;
-}
-
 .read-col {
-  width: 10%;
+height: 200px;
 }
 </style>
 
@@ -61,8 +49,13 @@
       <td><c:out value="${articleData.article.title }"></c:out></td>
     </tr>
         <tr>
-      <th scope="row">내용</th>
-      <td><c:out value="${articleData.content.content }"></c:out></td>
+         <th scope="row">내용
+
+         </th></label>
+   
+      
+      
+      <td class="read-col"><c:out value="${articleData.content.content }"></c:out></td>
     </tr>
       </tbody>
       
