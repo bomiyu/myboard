@@ -15,26 +15,58 @@
 <script
   src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
+<style>
+.num-col {
+  width: 10%;
+}
+
+.title-col {
+  width: 60%;
+}
+
+.writer-col {
+  width: 20%;
+}
+
+.read-col {
+  width: 10%;
+}
+</style>
+
 </head>
 <body>
-  <div class="container">
-    <table border="1" width="100%">
-      <tr>
-        <td>번호</td>
-        <td>${articleData.article.number }</td>
-      </tr>
-      <tr>
-        <td>작성자</td>
-        <td>${articleData.article.writer.name }</td>
-      </tr>
-      <tr>
-        <td>제목</td>
-        <td><c:out value="${articleData.article.title }"></c:out></td>
-      </tr>
-      <tr>
-        <td>내용</td>
-        <td><u:pre value="${articleData.content.content }" /></td>
-      </tr>
+  <u:navbar></u:navbar>
+  
+    <div class="container">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+      
+
+    <table class="table">
+    <tbody>
+    	
+        <tr>
+      <th scope="row">번호</th>
+      <td>${articleData.article.number }</td>
+
+    </tr>
+    <tr>
+      <th scope="row">작성자</th>
+      <td>${articleData.article.writer.name }</td>
+
+    </tr>
+    <tr>
+      <th scope="row">제목</th>
+      <td><c:out value="${articleData.article.title }"></c:out></td>
+    </tr>
+        <tr>
+      <th scope="row">내용</th>
+      <td><c:out value="${articleData.content.content }"></c:out></td>
+    </tr>
+      </tbody>
+      
+      
       <tr>
         <td colspan="2"><c:set var="pageNo"
             value="${empty param.pageNo ? '1' : param.pageNo }" /> <a
@@ -46,8 +78,6 @@
           </c:if></td>
       </tr>
       <tr>
-        <td></td>
-        <td></td>
       </tr>
     </table>
     
@@ -59,7 +89,12 @@
     <u:replyForm articleNo="${articleData.article.number }"/>
     
     <u:listReply /> 
-  </div>
+    
+            </div>
+      </div>
+    </div>
+    </div>
+
 </body>
 </html>
 
