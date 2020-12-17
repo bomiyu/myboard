@@ -51,7 +51,7 @@ height: 200px;
         <tr>
          <th scope="row">내용
 
-         </th></label>
+         </th>
    
       
       
@@ -86,7 +86,7 @@ height: 200px;
             </div>
       </div>
     </div>
-    </div>
+
 
 </body>
 </html>
