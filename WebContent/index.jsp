@@ -29,7 +29,7 @@
   <p class="lead">미니게시판 플젝입니당 </p>
   <hr class="my-4">
   <p>하하핳하하 메인내용을 넣어보세용~~~~~~~</p>
-  <a class="btn btn-primary btn-lg" href="${root }/join.do" role="button">회원가입</a>
+  <a class="btn btn-secondary  btn-lg btn-lg" href="${root }/join.do" role="button">회원가입</a>
 </div>
   </div>
 </body>

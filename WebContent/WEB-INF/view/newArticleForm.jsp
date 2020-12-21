@@ -26,7 +26,7 @@
                 <label for="input1-title">제목</label>
                 <input value="${param.title }" type="text" class="form-control" id="input1-title" name="title" />
                 <c:if test="${errors.title }">
-                  <small class="form-text text-muted">
+                  <small class="form-text text-light">
                     제목을 입력하세요.
                   </small>
                 </c:if>
@@ -37,7 +37,7 @@
                 <label for="textarea1-content">내용</label>
                 <textarea name="" id="textarea1-content" cols="30" rows="10" class="form-control">${param.content }</textarea>
               </div>
-              <button type="submit" class="btn btn-primary">글 등록</button>
+              <button type="submit" class="btn btn-secondary  btn-lg">글 등록</button>
             </form>
 		</div>
 	</div>

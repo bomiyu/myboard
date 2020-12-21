@@ -26,17 +26,17 @@
               <label for="input1-password">암호</label>
               <input type="password" class="form-control" id="input1-password" name="password" />
               <c:if test="${errors.password }">
-                <small class="form-text text-muted">
+                <small class="form-text text-light">
                   패스워드를 입력해주세요.
                 </small>
               </c:if>
               <c:if test="${errors.invalidPassword }">
-                <small class="form-text text-muted">
+                <small class="form-text text-light">
                   패스워드가 일치하지 않습니다.
                 </small>
               </c:if>
             </div>
-            <button type="submit" class="btn btn-primary">회원 탈퇴</button>
+            <button type="submit" class="btn btn-secondary  btn-lg">회원 탈퇴</button>
             
           </form>
   		</div>
